@@ -67,7 +67,6 @@
       width: 52px;
       height: 52px;
       flex-shrink: 0;
-      background: var(--gold);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -484,11 +483,12 @@
       gap: 1.25rem
     }
 
+
     .card {
       background: var(--white);
       border: 1.5px solid var(--gray-100);
       border-radius: 6px;
-      padding: 1.6rem 1.5rem 1.4rem;
+      overflow: hidden;
       transition: border-color 0.2s, box-shadow 0.2s;
       display: flex;
       flex-direction: column;
@@ -497,6 +497,61 @@
     .card:hover {
       border-color: var(--navy);
       box-shadow: 0 4px 20px rgba(0, 53, 149, 0.08)
+    }
+
+    .card-img-wrap {
+      width: 100%;
+      height: 170px;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      position: relative;
+      z-index: 1;
+      transition: transform 0.35s ease;
+    }
+
+    .card:hover .card-img-wrap img {
+      transform: scale(1.05)
+    }
+
+    .card-img-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: var(--navy);
+      z-index: 0;
+    }
+
+    .card-img-placeholder svg {
+      width: 40px;
+      height: 40px;
+      color: rgba(255, 255, 255, 0.18);
+    }
+
+    .card-img-placeholder span {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.25);
+    }
+
+    .card-body {
+      padding: 1.2rem 1.5rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
     }
 
     .card-badge {
@@ -641,7 +696,8 @@
   <!-- ═══ HEADER ═══ -->
   <header>
     <div class="header-top">
-      <div class="kc-emblem"><img src="images/emblema.png" alt="Emblema de los Caballeros de Colón"></div>
+      <div class="kc-emblem"><img src="images/emblema.png" alt="Emblema de los Caballeros de Colón"
+          style="width: 5rem;"></div>
       <div class="header-text">
         <h1>Repositorio de Oraciones y Horas Santas</h1>
         <p>Caballeros de Col&oacute;n &mdash; Jurisdicci&oacute;n M&eacute;xico Sur</p>
@@ -709,6 +765,13 @@
       </svg>
       Descargar material oficial
     </a>
+    <a class="btn-download" href="documentos/libro-registros.pdf" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 12v6m0 0l-3-3m3 3l3-3M12 3v9" />
+      </svg>
+      Descargar Libro de Registros
+    </a>
   </section>
 
   <div class="section-divider"></div>
@@ -725,10 +788,10 @@
     <div class="cal-grid">
 
       <div class="cal-card"
-        onclick="abrirModal('calendarios/zona1.jpg','Zona 1 &mdash; Estado de M&eacute;xico y CDMX')" role="button"
+        onclick="abrirModal('calendarios/zona1.jpeg','Zona 1 &mdash; Estado de M&eacute;xico y CDMX')" role="button"
         tabindex="0" aria-label="Ver calendario Zona 1">
         <div class="cal-img-wrap">
-          <img src="calendarios/zona1.jpg" alt="Calendario Zona 1" loading="lazy" />
+          <img src="calendarios/zona1.jpeg" alt="Calendario Zona 1" loading="lazy" />
           <div class="cal-overlay">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
@@ -743,10 +806,10 @@
       </div>
 
       <div class="cal-card"
-        onclick="abrirModal('calendarios/zona2.jpg','Zona 2 &mdash; Guerrero, Puebla, Veracruz y Tabasco')"
+        onclick="abrirModal('calendarios/zona2.jpeg','Zona 2 &mdash; Guerrero, Puebla, Veracruz y Tabasco')"
         role="button" tabindex="0" aria-label="Ver calendario Zona 2">
         <div class="cal-img-wrap">
-          <img src="calendarios/zona2.jpg" alt="Calendario Zona 2" loading="lazy" />
+          <img src="calendarios/zona2.jpeg" alt="Calendario Zona 2" loading="lazy" />
           <div class="cal-overlay">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
@@ -761,10 +824,10 @@
       </div>
 
       <div class="cal-card"
-        onclick="abrirModal('calendarios/zona3.jpg','Zona 3 &mdash; Campeche, Yucat&aacute;n y Quintana Roo')"
+        onclick="abrirModal('calendarios/zona3.jpeg','Zona 3 &mdash; Campeche, Yucat&aacute;n y Quintana Roo')"
         role="button" tabindex="0" aria-label="Ver calendario Zona 3">
         <div class="cal-img-wrap">
-          <img src="calendarios/zona3.jpg" alt="Calendario Zona 3" loading="lazy" />
+          <img src="calendarios/zona3.jpeg" alt="Calendario Zona 3" loading="lazy" />
           <div class="cal-overlay">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
@@ -807,7 +870,7 @@
     </p>
 
     <div class="topbar">
-      <p class="topbar-left"><strong>8</strong> im&aacute;genes disponibles</p>
+      <p class="topbar-left"><strong>6</strong> im&aacute;genes disponibles</p>
       <div class="search-wrap">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -821,198 +884,230 @@
     <div class="grid" id="grid">
 
       <div class="card" data-name="san jose">
-        <span class="card-badge">&#205;cono Peregrino</span>
-        <h2>San Jos&eacute;</h2>
-        <p>Esposo de la Virgen Mar&iacute;a, padre adoptivo de Jesucristo y patr&oacute;n de la Iglesia Universal.</p>
-        <div class="divider"></div>
-        <div class="docs">
-          <a class="doc-link" href="documentos/san-jose/oracion.pdf" target="_blank"><svg
-              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>Oraci&oacute;n</a>
-          <a class="doc-link" href="documentos/san-jose/rosario.pdf" target="_blank"><svg
-              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>Rosario</a>
-          <a class="doc-link" href="documentos/san-jose/hora-santa.pdf" target="_blank"><svg
-              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>Hora Santa</a>
+        <div class="card-img-wrap">
+          <img src="images/jose.webp" alt="San José" loading="lazy" onerror="this.style.opacity=0" />
+          <div class="card-img-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <span>imagen pr&oacute;ximamente</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-badge">&#205;cono Peregrino</span>
+          <h2>San Jos&eacute;</h2>
+          <p>Esposo de la Virgen Mar&iacute;a, padre adoptivo de Jesucristo y patr&oacute;n de la Iglesia Universal.</p>
+          <div class="divider"></div>
+          <div class="docs">
+            <a class="doc-link" href="documentos/san-jose/oraciones.pdf" target="_blank"><svg
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>Oraciones</a>
+            <a class="doc-link pronto" href="documentos/san-jose/rosario.pdf" aria-disabled="true" target="_blank"><svg
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>Rosario</a>
+            <a class="doc-link pronto" href="documentos/san-jose/hora-santa.pdf" aria-disabled="true" target="_blank"><svg
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>Hora Santa</a>
+          </div>
         </div>
       </div>
 
       <div class="card" data-name="sagrado corazon jesus">
-        <span class="card-badge">&#205;cono Peregrino</span>
-        <h2>Sagrado Coraz&oacute;n de Jes&uacute;s</h2>
-        <p>Devoci&oacute;n al amor infinito de Cristo manifestado en su Coraz&oacute;n misericordioso.</p>
-        <div class="divider"></div>
-        <div class="docs">
-          <a class="doc-link" href="documentos/sagrado-corazon/oracion.pdf" target="_blank"><svg
-              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>Oraci&oacute;n</a>
-          <a class="doc-link" href="documentos/sagrado-corazon/rosario.pdf" target="_blank"><svg
-              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>Rosario</a>
-          <a class="doc-link" href="documentos/sagrado-corazon/hora-santa.pdf" target="_blank"><svg
-              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>Hora Santa</a>
+        <div class="card-img-wrap">
+          <img src="images/corazon.webp" alt="Sagrado Corazón de Jesús" loading="lazy"
+            onerror="this.style.opacity=0" />
+          <div class="card-img-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <span>imagen pr&oacute;ximamente</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-badge">&#205;cono Peregrino</span>
+          <h2>Sagrado Coraz&oacute;n de Jes&uacute;s</h2>
+          <p>Devoci&oacute;n al amor infinito de Cristo manifestado en su Coraz&oacute;n misericordioso.</p>
+          <div class="divider"></div>
+          <div class="docs">
+            <a class="doc-link" href="documentos/sagrado-corazon/oracion.pdf" target="_blank"><svg
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>Oraci&oacute;n</a>
+            <a class="doc-link" href="documentos/sagrado-corazon/hora-santa.pdf" target="_blank"><svg
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>Hora Santa</a>
+            <a class="doc-link" href="documentos/sagrado-corazon/letanias.pdf" target="_blank"><svg
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>Letanías</a>
+            <a class="doc-link" href="documentos/sagrado-corazon/entronizacion.pdf" target="_blank"><svg
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>Entronización</a>
+            <a class="doc-link" href="documentos/sagrado-corazon/oracion-entronizacion.pdf" target="_blank"><svg
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>Oraciones de Entronización</a>
+          </div>
         </div>
       </div>
 
       <div class="card" data-name="rosa de plata">
-        <span class="card-badge">&#205;cono Peregrino</span>
-        <h2>Rosa de Plata</h2>
-        <p>Imagen peregrina de Nuestra Se&ntilde;ora en la Jurisdicci&oacute;n M&eacute;xico Sur.</p>
-        <div class="divider"></div>
-        <div class="docs">
-          <a class="doc-link" href="documentos/rosa-de-plata/oracion.pdf" target="_blank"><svg
-              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>Oraci&oacute;n</a>
-          <a class="doc-link" href="documentos/rosa-de-plata/rosario.pdf" target="_blank"><svg
-              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>Rosario</a>
-          <a class="doc-link" href="documentos/rosa-de-plata/hora-santa.pdf" target="_blank"><svg
-              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>Hora Santa</a>
+        <div class="card-img-wrap">
+          <img src="images/rosa.jpg" alt="Rosa de Plata" loading="lazy" onerror="this.style.opacity=0" />
+          <div class="card-img-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <span>imagen pr&oacute;ximamente</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-badge">&#205;cono Peregrino</span>
+          <h2>Rosa de Plata</h2>
+          <p>Imagen peregrina de Nuestra Se&ntilde;ora en la Jurisdicci&oacute;n M&eacute;xico Sur.</p>
+          <div class="divider"></div>
+          <div class="docs">
+            <a class="doc-link" href="documentos/rosa-de-plata/oracion-promesa.pdf" target="_blank"><svg
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>Oraci&oacute;n y Promesa</a>
+            <a class="doc-link" href="documentos/rosa-de-plata/rosario.pdf" target="_blank"><svg
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>Rosario</a>
+            <a class="doc-link" href="documentos/rosa-de-plata/registro.pdf" target="_blank"><svg
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>Libro de Registro</a>
+          </div>
         </div>
       </div>
 
       <div class="card" data-name="virgen guadalupe">
-        <span class="card-badge">Devoci&oacute;n Mariana</span>
-        <h2>Virgen de Guadalupe</h2>
-        <p>Patrona de M&eacute;xico y Am&eacute;rica, aparecida al beato Juan Diego Cuauhtlatoatzin en 1531.</p>
-        <div class="divider"></div>
-        <div class="docs">
-          <a class="doc-link" href="documentos/virgen-guadalupe/oracion.pdf" target="_blank"><svg
-              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>Oraci&oacute;n</a>
-          <a class="doc-link" href="documentos/virgen-guadalupe/rosario.pdf" target="_blank"><svg
-              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>Rosario</a>
-          <a class="doc-link" href="documentos/virgen-guadalupe/hora-santa.pdf" target="_blank"><svg
-              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>Hora Santa</a>
+        <div class="card-img-wrap">
+          <img src="images/virgen-guadalupe.jpeg" alt="Virgen de Guadalupe" loading="lazy"
+            onerror="this.style.opacity=0" />
+          <div class="card-img-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <span>imagen pr&oacute;ximamente</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-badge">Devoci&oacute;n Mariana</span>
+          <h2>Virgen de Guadalupe</h2>
+          <p>Patrona de M&eacute;xico y Am&eacute;rica, aparecida al beato Juan Diego Cuauhtlatoatzin en 1531.</p>
+          <div class="divider"></div>
+          <div class="docs">
+            <a class="doc-link" href="documentos/virgen-guadalupe/rosario.pdf" target="_blank"><svg
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>Rosario</a>
+            <a class="doc-link" href="documentos/virgen-guadalupe/hora-santa.pdf" target="_blank"><svg
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>Hora Santa</a>
+          </div>
         </div>
       </div>
 
       <div class="card" data-name="beato miguel mcgivney fundador">
-        <span class="card-badge">Fundador</span>
-        <h2>Reliquia del Beato Miguel McGivney</h2>
-        <p>Fundador de los Caballeros de Col&oacute;n. Modelo de caridad, unidad y fraternidad cat&oacute;lica.</p>
-        <div class="divider"></div>
-        <div class="docs">
-          <a class="doc-link" href="documentos/beato-mcgivney/oracion.pdf" target="_blank"><svg
-              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>Oraci&oacute;n</a>
-          <a class="doc-link pronto" href="#" aria-disabled="true" title="Pr&oacute;ximamente"><svg
-              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>Rosario</a>
-          <a class="doc-link" href="documentos/beato-mcgivney/hora-santa.pdf" target="_blank"><svg
-              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>Hora Santa</a>
+        <div class="card-img-wrap">
+          <img src="images/reliquia.jpeg" alt="Beato Miguel McGivney" loading="lazy"
+            onerror="this.style.opacity=0" />
+          <div class="card-img-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <span>imagen pr&oacute;ximamente</span>
+          </div>
         </div>
-      </div>
-
-      <div class="card" data-name="virgen cristianos perseguidos">
-        <span class="card-badge">Devoci&oacute;n Mariana</span>
-        <h2>Virgen de los Cristianos Perseguidos</h2>
-        <p>Intercesora por los hermanos que sufren persecuci&oacute;n a causa de la fe en Cristo.</p>
-        <div class="divider"></div>
-        <div class="docs">
-          <a class="doc-link" href="documentos/virgen-cristianos-perseguidos/oracion.pdf" target="_blank"><svg
-              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>Oraci&oacute;n</a>
-          <a class="doc-link" href="documentos/virgen-cristianos-perseguidos/rosario.pdf" target="_blank"><svg
-              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>Rosario</a>
-          <a class="doc-link" href="documentos/virgen-cristianos-perseguidos/hora-santa.pdf" target="_blank"><svg
-              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>Hora Santa</a>
+        <div class="card-body">
+          <span class="card-badge">Fundador</span>
+          <h2>Beato Miguel McGivney</h2>
+          <p>Fundador de los Caballeros de Col&oacute;n. Modelo de caridad, unidad y fraternidad cat&oacute;lica.</p>
+          <div class="divider"></div>
+          <div class="docs">
+            <a class="doc-link" href="documentos/beato-mcgivney/oracion.pdf" target="_blank"><svg
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>Oraci&oacute;n</a>
+            <a class="doc-link" href="https://kofc.com.mx/novena-mcgivney/" target="_blank"><svg
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>Novena</a>
+            <a class="doc-link pronto" href="documentos/beato-mcgivney/hora-santa.pdf" aria-disabled="true" target="_blank"><svg
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>Hora Santa</a>
+          </div>
         </div>
       </div>
 
       <div class="card" data-name="santos martires mexicanos caballeros de colon cristeros">
-        <span class="card-badge">M&aacute;rtires</span>
-        <h2>Santos M&aacute;rtires Mexicanos Caballeros de Col&oacute;n</h2>
-        <p>Caballeros que ofrendaron su vida durante la persecuci&oacute;n religiosa en M&eacute;xico. Entre ellos el
-          Beato Manuel Morales y compa&ntilde;eros m&aacute;rtires.</p>
-        <div class="divider"></div>
-        <div class="docs">
-          <a class="doc-link" href="documentos/martires-mexicanos/oracion.pdf" target="_blank"><svg
-              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>Oraci&oacute;n</a>
-          <a class="doc-link" href="documentos/martires-mexicanos/novena.pdf" target="_blank"><svg
-              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>Novena</a>
-          <a class="doc-link" href="documentos/martires-mexicanos/hora-santa.pdf" target="_blank"><svg
-              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>Hora Santa</a>
+        <div class="card-img-wrap">
+          <img src="images/martires.jpeg" alt="Santos Mártires Mexicanos" loading="lazy"
+            onerror="this.style.opacity=0" />
+          <div class="card-img-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <span>imagen pr&oacute;ximamente</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-badge">M&aacute;rtires</span>
+          <h2>Santos M&aacute;rtires Mexicanos Caballeros de Col&oacute;n</h2>
+          <p>Caballeros que ofrendaron su vida durante la persecuci&oacute;n religiosa en M&eacute;xico. Entre ellos el
+            Beato Manuel Morales y compa&ntilde;eros m&aacute;rtires.</p>
+          <div class="divider"></div>
+          <div class="docs">
+            <a class="doc-link" href="documentos/martires-mexicanos/oracion.pdf" target="_blank"><svg
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>Oraci&oacute;n</a>
+            <a class="doc-link" href="documentos/martires-mexicanos/novena.pdf" target="_blank"><svg
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>Novena</a>
+            <a class="doc-link" href="documentos/martires-mexicanos/historia.pdf" target="_blank"><svg
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>Historia</a>
+          </div>
         </div>
       </div>
-
-      <div class="card" data-name="virgen caridad cobre cuba">
-        <span class="card-badge">Devoci&oacute;n Mariana</span>
-        <h2>Virgen de la Caridad del Cobre</h2>
-        <p>Patrona de Cuba, venerada desde el siglo XVII como s&iacute;mbolo de fe, esperanza y amor.</p>
-        <div class="divider"></div>
-        <div class="docs">
-          <a class="doc-link" href="documentos/virgen-caridad-cobre/oracion.pdf" target="_blank"><svg
-              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>Oraci&oacute;n</a>
-          <a class="doc-link" href="documentos/virgen-caridad-cobre/rosario.pdf" target="_blank"><svg
-              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>Rosario</a>
-          <a class="doc-link" href="documentos/virgen-caridad-cobre/hora-santa.pdf" target="_blank"><svg
-              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>Hora Santa</a>
-        </div>
-      </div>
-
     </div>
   </section>
 
