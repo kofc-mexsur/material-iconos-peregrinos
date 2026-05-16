@@ -1,408 +1,1066 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Repositorio de Oraciones &mdash; Caballeros de Col&oacute;n M&eacute;xico Sur</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet"/>
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --navy:#003595;
-  --navy-dark:#002270;
-  --gold:#faa514;
-  --gold-light:#fef3dc;
-  --white:#ffffff;
-  --gray-50:#f7f8fb;
-  --gray-100:#eef0f5;
-  --gray-300:#c5cad8;
-  --gray-500:#6b7494;
-  --gray-800:#1c2340;
-  --text:#1c2340;
-}
-html{scroll-behavior:smooth}
-body{
-  font-family:'Lato',system-ui,sans-serif;
-  font-weight:400;
-  color:var(--text);
-  background:var(--gray-50);
-  min-height:100vh;
-  font-size:15px;
-  line-height:1.6;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Repositorio de Oraciones &mdash; Caballeros de Col&oacute;n M&eacute;xico Sur</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@600&display=swap"
+    rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
 
-/* ── HEADER ── */
-header{
-  background:var(--navy);
-  color:var(--white);
-  padding:0;
-}
-.header-top{
-  display:flex;
-  align-items:center;
-  gap:1.25rem;
-  max-width:1100px;
-  margin:0 auto;
-  padding:1.6rem 2rem 1.5rem;
-}
-.kc-emblem{
-  width:52px;height:52px;flex-shrink:0;
-  background:var(--gold);
-  border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Playfair Display',serif;
-  font-size:1.15rem;font-weight:600;
-  color:var(--navy);
-  letter-spacing:-0.02em;
-  flex-direction:column;
-  line-height:1;
-}
-.kc-emblem span{font-size:0.55rem;font-family:'Lato',sans-serif;font-weight:700;letter-spacing:0.1em;margin-top:1px}
-.header-text h1{
-  font-family:'Playfair Display',serif;
-  font-size:1.25rem;
-  font-weight:600;
-  letter-spacing:0.01em;
-  line-height:1.25;
-  color:var(--white);
-}
-.header-text p{
-  font-size:0.78rem;
-  font-weight:300;
-  letter-spacing:0.18em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,0.65);
-  margin-top:0.25rem;
-}
-.header-bar{height:4px;background:var(--gold)}
+    :root {
+      --navy: #003595;
+      --navy-dark: #002270;
+      --gold: #faa514;
+      --gold-light: #fef3dc;
+      --white: #ffffff;
+      --gray-50: #f7f8fb;
+      --gray-100: #eef0f5;
+      --gray-300: #c5cad8;
+      --gray-500: #6b7494;
+      --gray-800: #1c2340;
+      --text: #1c2340;
+    }
 
-/* ── MAIN CONTENT ── */
-main{max-width:1100px;margin:0 auto;padding:2.5rem 2rem 4rem}
+    html {
+      scroll-behavior: smooth
+    }
 
-/* ── TOPBAR: search + badge ── */
-.topbar{
-  display:flex;align-items:center;justify-content:space-between;
-  gap:1rem;
-  margin-bottom:2rem;
-  flex-wrap:wrap;
-}
-.topbar-left{
-  font-size:0.72rem;font-weight:700;letter-spacing:0.2em;
-  text-transform:uppercase;color:var(--gray-500);
-}
-.topbar-left strong{color:var(--navy)}
-.search-wrap{position:relative;flex-shrink:0}
-.search-wrap input{
-  padding:0.55rem 1rem 0.55rem 2.4rem;
-  border:1.5px solid var(--gray-300);
-  border-radius:4px;
-  font-family:'Lato',sans-serif;
-  font-size:0.87rem;color:var(--text);
-  background:var(--white);
-  outline:none;width:220px;
-  transition:border-color 0.2s;
-}
-.search-wrap input:focus{border-color:var(--navy)}
-.search-wrap input::placeholder{color:var(--gray-300)}
-.search-wrap svg{
-  position:absolute;left:0.7rem;top:50%;transform:translateY(-50%);
-  width:15px;height:15px;color:var(--gray-300);pointer-events:none;
-}
+    body {
+      font-family: 'Lato', system-ui, sans-serif;
+      font-weight: 400;
+      color: var(--text);
+      background: var(--gray-50);
+      min-height: 100vh;
+      font-size: 15px;
+      line-height: 1.6;
+    }
 
-/* ── GRID ── */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(295px,1fr));
-  gap:1.25rem;
-}
+    /* ── HEADER ── */
+    header {
+      background: var(--navy);
+      color: var(--white);
+      padding: 0
+    }
 
-/* ── CARD ── */
-.card{
-  background:var(--white);
-  border:1.5px solid var(--gray-100);
-  border-radius:6px;
-  padding:1.6rem 1.5rem 1.4rem;
-  transition:border-color 0.2s,box-shadow 0.2s;
-  display:flex;flex-direction:column;
-}
-.card:hover{
-  border-color:var(--navy);
-  box-shadow:0 4px 20px rgba(0,53,149,0.08);
-}
-.card-badge{
-  display:inline-block;
-  font-size:0.65rem;font-weight:700;letter-spacing:0.2em;
-  text-transform:uppercase;
-  color:var(--navy);
-  background:var(--gray-100);
-  padding:0.2rem 0.55rem;border-radius:2px;
-  margin-bottom:0.9rem;
-  align-self:flex-start;
-}
-.card h2{
-  font-family:'Playfair Display',serif;
-  font-size:1.05rem;font-weight:600;
-  color:var(--navy);
-  margin-bottom:0.5rem;
-  line-height:1.35;
-}
-.card p{
-  font-size:0.85rem;color:var(--gray-500);
-  line-height:1.6;margin-bottom:auto;
-  padding-bottom:1.2rem;
-}
+    .header-top {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.6rem 2rem 1.5rem;
+    }
 
-/* ── DOCS ── */
-.divider{height:1px;background:var(--gray-100);margin-bottom:1.1rem}
-.docs{display:flex;flex-wrap:wrap;gap:0.5rem}
-.doc-link{
-  display:inline-flex;align-items:center;gap:0.3rem;
-  font-size:0.75rem;font-weight:700;letter-spacing:0.1em;
-  text-transform:uppercase;
-  color:var(--navy);
-  text-decoration:none;
-  padding:0.38rem 0.8rem;
-  border:1.5px solid var(--gray-100);
-  border-radius:3px;
-  background:var(--gray-50);
-  transition:all 0.18s;
-}
-.doc-link:hover{
-  background:var(--gold-light);
-  border-color:var(--gold);
-  color:var(--navy-dark);
-}
-.doc-link svg{width:12px;height:12px;flex-shrink:0}
-.doc-link.pronto{
-  color:var(--gray-300);border-color:var(--gray-100);
-  pointer-events:none;
-}
+    .kc-emblem {
+      width: 52px;
+      height: 52px;
+      flex-shrink: 0;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      line-height: 1;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+    }
 
-/* ── FOOTER ── */
-footer{
-  border-top:1.5px solid var(--gray-100);
-  padding:1.5rem 2rem;
-  max-width:1100px;
-  margin:0 auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:1rem;
-  flex-wrap:wrap;
-}
-footer p{font-size:0.75rem;color:var(--gray-500);font-weight:300;letter-spacing:0.08em}
-footer .vivat{font-size:0.75rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold)}
+    .kc-emblem span {
+      font-size: 0.55rem;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      margin-top: 1px
+    }
 
-@media(max-width:600px){
-  .header-text h1{font-size:1.05rem}
-  .topbar{flex-direction:column;align-items:flex-start}
-  .search-wrap input{width:100%}
-  .search-wrap{width:100%}
-  main{padding:1.5rem 1rem 3rem}
-}
+    .header-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      line-height: 1.25;
+      color: var(--white);
+    }
 
-.no-results{
-  grid-column:1/-1;
-  text-align:center;padding:3rem 1rem;
-  color:var(--gray-500);font-size:0.9rem;
-}
-</style>
+    .header-text p {
+      font-size: 0.78rem;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.65);
+      margin-top: 0.25rem;
+    }
+
+    .header-bar {
+      height: 4px;
+      background: var(--gold)
+    }
+
+    /* ── NAV ANCHORS ── */
+    .page-nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-100);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .page-nav ul {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      gap: 0;
+      list-style: none;
+    }
+
+    .page-nav a {
+      display: block;
+      padding: 0.8rem 1.1rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      text-decoration: none;
+      border-bottom: 2.5px solid transparent;
+      transition: color 0.18s, border-color 0.18s;
+    }
+
+    .page-nav a:hover {
+      color: var(--navy);
+      border-bottom-color: var(--gold)
+    }
+
+    /* ── SECTION WRAPPER ── */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem
+    }
+
+    .section+.section {
+      padding-top: 0
+    }
+
+    .section-divider {
+      height: 1px;
+      background: var(--gray-100);
+      max-width: 1100px;
+      margin: 0 auto 0
+    }
+
+    .section-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .section-desc {
+      font-size: 0.9rem;
+      color: var(--gray-500);
+      max-width: 680px;
+      line-height: 1.7;
+      margin-bottom: 1.8rem;
+    }
+
+    /* ── ICONO PEREGRINO SECTION ── */
+    .icono-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .icono-step {
+      background: var(--white);
+      border: 1.5px solid var(--gray-100);
+      border-radius: 6px;
+      padding: 1.3rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .icono-step:hover {
+      border-color: var(--navy)
+    }
+
+    .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 0.78rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.3rem;
+      flex-shrink: 0;
+    }
+
+    .icono-step h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.3
+    }
+
+    .icono-step p {
+      font-size: 0.83rem;
+      color: var(--gray-500);
+      line-height: 1.6
+    }
+
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--navy);
+      color: var(--white);
+      padding: 0.7rem 1.5rem;
+      border-radius: 4px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.18s;
+    }
+
+    .btn-download:hover {
+      background: var(--navy-dark)
+    }
+
+    .btn-download svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0
+    }
+
+    /* ── CALENDARIOS SECTION ── */
+    .cal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .cal-card {
+      background: var(--white);
+      border: 1.5px solid var(--gray-100);
+      border-radius: 6px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .cal-card:hover {
+      border-color: var(--navy);
+      box-shadow: 0 4px 20px rgba(0, 53, 149, 0.1);
+    }
+
+    .cal-card:hover .cal-overlay {
+      opacity: 1
+    }
+
+    .cal-img-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 16/9
+    }
+
+    .cal-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s;
+    }
+
+    .cal-card:hover .cal-img-wrap img {
+      transform: scale(1.03)
+    }
+
+    .cal-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 53, 149, 0.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
+    .cal-overlay svg {
+      width: 36px;
+      height: 36px;
+      color: var(--white)
+    }
+
+    .cal-info {
+      padding: 0.9rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cal-info h3 {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--navy)
+    }
+
+    .cal-info span {
+      font-size: 0.72rem;
+      color: var(--gray-500);
+      letter-spacing: 0.06em
+    }
+
+    /* ── MODAL ── */
+    .modal-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(7, 9, 15, 0.88);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+
+    .modal-bg.open {
+      opacity: 1;
+      pointer-events: all
+    }
+
+    .modal-inner {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .modal-inner img {
+      max-width: 100%;
+      max-height: 80vh;
+      border-radius: 4px;
+      object-fit: contain;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+    }
+
+    .modal-caption {
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: -14px;
+      right: -14px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--navy);
+      transition: background 0.18s;
+    }
+
+    .modal-close:hover {
+      background: #e6950f
+    }
+
+    .modal-close svg {
+      width: 16px;
+      height: 16px
+    }
+
+    /* ── ORACIONES SECTION ── */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .topbar-left {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-500)
+    }
+
+    .topbar-left strong {
+      color: var(--navy)
+    }
+
+    .search-wrap {
+      position: relative;
+      flex-shrink: 0
+    }
+
+    .search-wrap input {
+      padding: 0.55rem 1rem 0.55rem 2.4rem;
+      border: 1.5px solid var(--gray-300);
+      border-radius: 4px;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.87rem;
+      color: var(--text);
+      background: var(--white);
+      outline: none;
+      width: 220px;
+      transition: border-color 0.2s;
+    }
+
+    .search-wrap input:focus {
+      border-color: var(--navy)
+    }
+
+    .search-wrap input::placeholder {
+      color: var(--gray-300)
+    }
+
+    .search-wrap svg {
+      position: absolute;
+      left: 0.7rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 15px;
+      height: 15px;
+      color: var(--gray-300);
+      pointer-events: none;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
+      gap: 1.25rem
+    }
+
+    .card {
+      background: var(--white);
+      border: 1.5px solid var(--gray-100);
+      border-radius: 6px;
+      padding: 1.6rem 1.5rem 1.4rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      border-color: var(--navy);
+      box-shadow: 0 4px 20px rgba(0, 53, 149, 0.08)
+    }
+
+    .card-badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: var(--gray-100);
+      padding: 0.2rem 0.55rem;
+      border-radius: 2px;
+      margin-bottom: 0.9rem;
+      align-self: flex-start;
+    }
+
+    .card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+      line-height: 1.35;
+    }
+
+    .card p {
+      font-size: 0.85rem;
+      color: var(--gray-500);
+      line-height: 1.6;
+      margin-bottom: auto;
+      padding-bottom: 1.2rem
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--gray-100);
+      margin-bottom: 1.1rem
+    }
+
+    .docs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem
+    }
+
+    .doc-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--navy);
+      text-decoration: none;
+      padding: 0.38rem 0.8rem;
+      border: 1.5px solid var(--gray-100);
+      border-radius: 3px;
+      background: var(--gray-50);
+      transition: all 0.18s;
+    }
+
+    .doc-link:hover {
+      background: var(--gold-light);
+      border-color: var(--gold);
+      color: var(--navy-dark)
+    }
+
+    .doc-link svg {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0
+    }
+
+    .doc-link.pronto {
+      color: var(--gray-300);
+      border-color: var(--gray-100);
+      pointer-events: none
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1.5px solid var(--gray-100);
+      padding: 1.5rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    footer p {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      font-weight: 300;
+      letter-spacing: 0.08em
+    }
+
+    footer .vivat {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold)
+    }
+
+    @media(max-width:600px) {
+      .header-text h1 {
+        font-size: 1.05rem
+      }
+
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start
+      }
+
+      .search-wrap input {
+        width: 100%
+      }
+
+      .search-wrap {
+        width: 100%
+      }
+
+      .page-nav ul {
+        gap: 0;
+        overflow-x: auto
+      }
+
+      .page-nav a {
+        padding: 0.8rem 0.75rem;
+        white-space: nowrap
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
-  <div class="header-top">
-    <div class="kc-emblem">KC<span>&#x271D;</span></div>
-    <div class="header-text">
-      <h1>Repositorio de Oraciones y Horas Santas</h1>
-      <p>Caballeros de Col&oacute;n &mdash; Jurisdicci&oacute;n M&eacute;xico Sur</p>
+  <!-- ═══ HEADER ═══ -->
+  <header>
+    <div class="header-top">
+      <div class="kc-emblem"><img src="images/emblema.png" alt="Emblema de los Caballeros de Colón"></div>
+      <div class="header-text">
+        <h1>Repositorio de Oraciones y Horas Santas</h1>
+        <p>Caballeros de Col&oacute;n &mdash; Jurisdicci&oacute;n M&eacute;xico Sur</p>
+      </div>
+    </div>
+    <div class="header-bar"></div>
+  </header>
+
+  <!-- ═══ NAV ═══ -->
+  <nav class="page-nav" aria-label="Secciones">
+    <ul>
+      <li><a href="#icono">&#205;cono Peregrino</a></li>
+      <li><a href="#calendarios">Calendarios</a></li>
+      <li><a href="#oraciones">Oraciones y Horas Santas</a></li>
+    </ul>
+  </nav>
+
+  <!-- ═══ SECCIÓN 1: ÍCONO PEREGRINO ═══ -->
+  <section id="icono" class="section">
+    <p class="section-label">Programa devocional</p>
+    <h2 class="section-title">&#191;Qu&eacute; hacer con el &#205;cono Peregrino?</h2>
+    <p class="section-desc">
+      El &#237;cono peregrino es una imagen sagrada que visita los hogares y consejos de la jurisdicci&oacute;n
+      para fortalecer la vida de oraci&oacute;n familiar. A continuaci&oacute;n se describen los pasos esenciales
+      para recibirlo y despedirlo con dignidad.
+    </p>
+
+    <div class="icono-grid">
+      <div class="icono-step">
+        <div class="step-num">1</div>
+        <h3>Preparar el espacio</h3>
+        <p>Disponer un lugar destacado en el hogar o sal&oacute;n del consejo: un pe&ntilde;o o mesa cubierta con mantel
+          blanco, flores y velas encendidas.</p>
+      </div>
+      <div class="icono-step">
+        <div class="step-num">2</div>
+        <h3>Recibir la imagen</h3>
+        <p>El &#237;cono se recibe con una breve oraci&oacute;n de bienvenida. Se puede cantar un himno mariano o rezar
+          una decena del Rosario al momento de la llegada.</p>
+      </div>
+      <div class="icono-step">
+        <div class="step-num">3</div>
+        <h3>Rezar en familia o consejo</h3>
+        <p>Durante la estancia del &#237;cono se reza la oraci&oacute;n, el rosario y/o la hora santa propios de cada
+          imagen. Todos los materiales est&aacute;n disponibles en este repositorio.</p>
+      </div>
+      <div class="icono-step">
+        <div class="step-num">4</div>
+        <h3>Despedir la imagen</h3>
+        <p>Al concluir el per&iacute;odo asignado, el &#237;cono se entrega al siguiente consejo conforme al calendario
+          de zona. Se recomienda hacerlo con una oraci&oacute;n de env&iacute;o.</p>
+      </div>
+      <div class="icono-step">
+        <div class="step-num">5</div>
+        <h3>Reportar al Guard&aacute;n</h3>
+        <p>El responsable del consejo notifica al Guard&aacute;n de Zona la recepci&oacute;n y entrega puntual del
+          &#237;cono, para mantener el calendario actualizado.</p>
+      </div>
+    </div>
+
+    <a class="btn-download" href="documentos/material-oficial.pdf" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 12v6m0 0l-3-3m3 3l3-3M12 3v9" />
+      </svg>
+      Descargar material oficial
+    </a>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══ SECCIÓN 2: CALENDARIOS ═══ -->
+  <section id="calendarios" class="section">
+    <p class="section-label">Itinerario 2026</p>
+    <h2 class="section-title">Calendarios por Zona</h2>
+    <p class="section-desc">
+      Consulta el calendario de visitas del &#237;cono peregrino para cada zona de la jurisdicci&oacute;n.
+      Haz clic en cualquier imagen para verla en detalle.
+    </p>
+
+    <div class="cal-grid">
+
+      <div class="cal-card"
+        onclick="abrirModal('calendarios/zona1.jpg','Zona 1 &mdash; Estado de M&eacute;xico y CDMX')" role="button"
+        tabindex="0" aria-label="Ver calendario Zona 1">
+        <div class="cal-img-wrap">
+          <img src="calendarios/zona1.jpg" alt="Calendario Zona 1" loading="lazy" />
+          <div class="cal-overlay">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M21 21l-4.35-4.35M10 17a7 7 0 100-14 7 7 0 000 14zm3-7H7m3-3v6" />
+            </svg>
+          </div>
+        </div>
+        <div class="cal-info">
+          <h3>Zona 1</h3>
+          <span>Edo. de M&eacute;xico &amp; CDMX</span>
+        </div>
+      </div>
+
+      <div class="cal-card"
+        onclick="abrirModal('calendarios/zona2.jpg','Zona 2 &mdash; Guerrero, Puebla, Veracruz y Tabasco')"
+        role="button" tabindex="0" aria-label="Ver calendario Zona 2">
+        <div class="cal-img-wrap">
+          <img src="calendarios/zona2.jpg" alt="Calendario Zona 2" loading="lazy" />
+          <div class="cal-overlay">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M21 21l-4.35-4.35M10 17a7 7 0 100-14 7 7 0 000 14zm3-7H7m3-3v6" />
+            </svg>
+          </div>
+        </div>
+        <div class="cal-info">
+          <h3>Zona 2</h3>
+          <span>Guerrero, Puebla, Veracruz y Tabasco</span>
+        </div>
+      </div>
+
+      <div class="cal-card"
+        onclick="abrirModal('calendarios/zona3.jpg','Zona 3 &mdash; Campeche, Yucat&aacute;n y Quintana Roo')"
+        role="button" tabindex="0" aria-label="Ver calendario Zona 3">
+        <div class="cal-img-wrap">
+          <img src="calendarios/zona3.jpg" alt="Calendario Zona 3" loading="lazy" />
+          <div class="cal-overlay">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M21 21l-4.35-4.35M10 17a7 7 0 100-14 7 7 0 000 14zm3-7H7m3-3v6" />
+            </svg>
+          </div>
+        </div>
+        <div class="cal-info">
+          <h3>Zona 3</h3>
+          <span>Campeche, Yucat&aacute;n y Quintana Roo</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ MODAL ═══ -->
+  <div class="modal-bg" id="modal" onclick="cerrarModal(event)" role="dialog" aria-modal="true"
+    aria-label="Vista ampliada del calendario">
+    <div class="modal-inner">
+      <button class="modal-close" onclick="cerrarModal()" aria-label="Cerrar">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <img id="modal-img" src="" alt="" />
+      <p class="modal-caption" id="modal-cap"></p>
     </div>
   </div>
-  <div class="header-bar"></div>
-</header>
 
-<main>
-  <div class="topbar">
-    <p class="topbar-left"><strong>7</strong> im&aacute;genes &mdash; Oraciones, Rosarios y Horas Santas</p>
-    <div class="search-wrap">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11A6 6 0 111 11a6 6 0 0116 0z"/></svg>
-      <input id="search" type="text" placeholder="Buscar imagen&#x2026;" oninput="filtrar(this.value)" aria-label="Buscar imagen"/>
-    </div>
-  </div>
+  <div class="section-divider"></div>
 
-  <div class="grid" id="grid">
+  <!-- ═══ SECCIÓN 3: ORACIONES ═══ -->
+  <section id="oraciones" class="section">
+    <p class="section-label">Material devocional</p>
+    <h2 class="section-title">Oraciones y Horas Santas</h2>
+    <p class="section-desc">
+      Material de oraci&oacute;n revisado y disponible para cada imagen peregrina y devoci&oacute;n de la
+      jurisdicci&oacute;n.
+    </p>
 
-    <div class="card" data-name="san jose">
-      <span class="card-badge">Icono Peregrino</span>
-      <h2>San Jos&eacute;</h2>
-      <p>Esposo de la Virgen Mar&iacute;a, padre adoptivo de Jesucristo y patr&oacute;n de la Iglesia Universal.</p>
-      <div class="divider"></div>
-      <div class="docs">
-        <a class="doc-link" href="documentos/san-jose/oracion.pdf" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-          Oraci&oacute;n
-        </a>
-        <a class="doc-link" href="documentos/san-jose/rosario.pdf" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-          Rosario
-        </a>
-        <a class="doc-link" href="documentos/san-jose/hora-santa.pdf" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-          Hora Santa
-        </a>
+    <div class="topbar">
+      <p class="topbar-left"><strong>8</strong> im&aacute;genes disponibles</p>
+      <div class="search-wrap">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M21 21l-4.35-4.35M17 11A6 6 0 111 11a6 6 0 0116 0z" />
+        </svg>
+        <input id="search" type="text" placeholder="Buscar imagen&#x2026;" oninput="filtrar(this.value)"
+          aria-label="Buscar imagen" />
       </div>
     </div>
 
-    <div class="card" data-name="sagrado corazon corazon jesus">
-      <span class="card-badge">Icono Peregrino</span>
-      <h2>Sagrado Coraz&oacute;n de Jes&uacute;s</h2>
-      <p>Devoci&oacute;n al amor infinito de Cristo manifestado en su Coraz&oacute;n misericordioso.</p>
-      <div class="divider"></div>
-      <div class="docs">
-        <a class="doc-link" href="documentos/sagrado-corazon/oracion.pdf" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-          Oraci&oacute;n
-        </a>
-        <a class="doc-link" href="documentos/sagrado-corazon/rosario.pdf" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-          Rosario
-        </a>
-        <a class="doc-link" href="documentos/sagrado-corazon/hora-santa.pdf" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-          Hora Santa
-        </a>
+    <div class="grid" id="grid">
+
+      <div class="card" data-name="san jose">
+        <span class="card-badge">&#205;cono Peregrino</span>
+        <h2>San Jos&eacute;</h2>
+        <p>Esposo de la Virgen Mar&iacute;a, padre adoptivo de Jesucristo y patr&oacute;n de la Iglesia Universal.</p>
+        <div class="divider"></div>
+        <div class="docs">
+          <a class="doc-link" href="documentos/san-jose/oracion.pdf" target="_blank"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>Oraci&oacute;n</a>
+          <a class="doc-link" href="documentos/san-jose/rosario.pdf" target="_blank"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>Rosario</a>
+          <a class="doc-link" href="documentos/san-jose/hora-santa.pdf" target="_blank"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>Hora Santa</a>
+        </div>
       </div>
-    </div>
 
-    <div class="card" data-name="rosa de plata">
-      <span class="card-badge">Icono Peregrino</span>
-      <h2>Rosa de Plata</h2>
-      <p>Imagen peregrina de Nuestra Se&ntilde;ora en la Jurisdicci&oacute;n M&eacute;xico Sur.</p>
-      <div class="divider"></div>
-      <div class="docs">
-        <a class="doc-link" href="documentos/rosa-de-plata/oracion.pdf" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-          Oraci&oacute;n
-        </a>
-        <a class="doc-link" href="documentos/rosa-de-plata/rosario.pdf" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-          Rosario
-        </a>
-        <a class="doc-link" href="documentos/rosa-de-plata/hora-santa.pdf" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-          Hora Santa
-        </a>
+      <div class="card" data-name="sagrado corazon jesus">
+        <span class="card-badge">&#205;cono Peregrino</span>
+        <h2>Sagrado Coraz&oacute;n de Jes&uacute;s</h2>
+        <p>Devoci&oacute;n al amor infinito de Cristo manifestado en su Coraz&oacute;n misericordioso.</p>
+        <div class="divider"></div>
+        <div class="docs">
+          <a class="doc-link" href="documentos/sagrado-corazon/oracion.pdf" target="_blank"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>Oraci&oacute;n</a>
+          <a class="doc-link" href="documentos/sagrado-corazon/rosario.pdf" target="_blank"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>Rosario</a>
+          <a class="doc-link" href="documentos/sagrado-corazon/hora-santa.pdf" target="_blank"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>Hora Santa</a>
+        </div>
       </div>
-    </div>
 
-    <div class="card" data-name="virgen guadalupe nuestra senora">
-      <span class="card-badge">Devoci&oacute;n Mariana</span>
-      <h2>Virgen de Guadalupe</h2>
-      <p>Patrona de M&eacute;xico y Am&eacute;rica, aparecida al beato Juan Diego Cuauhtlatoatzin en 1531.</p>
-      <div class="divider"></div>
-      <div class="docs">
-        <a class="doc-link" href="documentos/virgen-guadalupe/oracion.pdf" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-          Oraci&oacute;n
-        </a>
-        <a class="doc-link" href="documentos/virgen-guadalupe/rosario.pdf" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-          Rosario
-        </a>
-        <a class="doc-link" href="documentos/virgen-guadalupe/hora-santa.pdf" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-          Hora Santa
-        </a>
+      <div class="card" data-name="rosa de plata">
+        <span class="card-badge">&#205;cono Peregrino</span>
+        <h2>Rosa de Plata</h2>
+        <p>Imagen peregrina de Nuestra Se&ntilde;ora en la Jurisdicci&oacute;n M&eacute;xico Sur.</p>
+        <div class="divider"></div>
+        <div class="docs">
+          <a class="doc-link" href="documentos/rosa-de-plata/oracion.pdf" target="_blank"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>Oraci&oacute;n</a>
+          <a class="doc-link" href="documentos/rosa-de-plata/rosario.pdf" target="_blank"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>Rosario</a>
+          <a class="doc-link" href="documentos/rosa-de-plata/hora-santa.pdf" target="_blank"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>Hora Santa</a>
+        </div>
       </div>
-    </div>
 
-    <div class="card" data-name="beato miguel mcgivney fundador">
-      <span class="card-badge">Fundador</span>
-      <h2>Beato Miguel McGivney</h2>
-      <p>Fundador de los Caballeros de Col&oacute;n. Modelo de caridad, unidad y fraternidad cat&oacute;lica.</p>
-      <div class="divider"></div>
-      <div class="docs">
-        <a class="doc-link" href="documentos/beato-mcgivney/oracion.pdf" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-          Oraci&oacute;n
-        </a>
-        <a class="doc-link pronto" href="#" aria-disabled="true" title="Pr&oacute;ximamente">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          Rosario
-        </a>
-        <a class="doc-link" href="documentos/beato-mcgivney/hora-santa.pdf" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-          Hora Santa
-        </a>
+      <div class="card" data-name="virgen guadalupe">
+        <span class="card-badge">Devoci&oacute;n Mariana</span>
+        <h2>Virgen de Guadalupe</h2>
+        <p>Patrona de M&eacute;xico y Am&eacute;rica, aparecida al beato Juan Diego Cuauhtlatoatzin en 1531.</p>
+        <div class="divider"></div>
+        <div class="docs">
+          <a class="doc-link" href="documentos/virgen-guadalupe/oracion.pdf" target="_blank"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>Oraci&oacute;n</a>
+          <a class="doc-link" href="documentos/virgen-guadalupe/rosario.pdf" target="_blank"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>Rosario</a>
+          <a class="doc-link" href="documentos/virgen-guadalupe/hora-santa.pdf" target="_blank"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>Hora Santa</a>
+        </div>
       </div>
-    </div>
 
-    <div class="card" data-name="virgen cristianos perseguidos">
-      <span class="card-badge">Devoci&oacute;n Mariana</span>
-      <h2>Virgen de los Cristianos Perseguidos</h2>
-      <p>Intercesora por los hermanos que sufren persecuci&oacute;n a causa de la fe en Cristo.</p>
-      <div class="divider"></div>
-      <div class="docs">
-        <a class="doc-link" href="documentos/virgen-cristianos-perseguidos/oracion.pdf" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-          Oraci&oacute;n
-        </a>
-        <a class="doc-link" href="documentos/virgen-cristianos-perseguidos/rosario.pdf" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-          Rosario
-        </a>
-        <a class="doc-link" href="documentos/virgen-cristianos-perseguidos/hora-santa.pdf" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-          Hora Santa
-        </a>
+      <div class="card" data-name="beato miguel mcgivney fundador">
+        <span class="card-badge">Fundador</span>
+        <h2>Reliquia del Beato Miguel McGivney</h2>
+        <p>Fundador de los Caballeros de Col&oacute;n. Modelo de caridad, unidad y fraternidad cat&oacute;lica.</p>
+        <div class="divider"></div>
+        <div class="docs">
+          <a class="doc-link" href="documentos/beato-mcgivney/oracion.pdf" target="_blank"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>Oraci&oacute;n</a>
+          <a class="doc-link pronto" href="#" aria-disabled="true" title="Pr&oacute;ximamente"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>Rosario</a>
+          <a class="doc-link" href="documentos/beato-mcgivney/hora-santa.pdf" target="_blank"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>Hora Santa</a>
+        </div>
       </div>
-    </div>
 
-    <div class="card" data-name="virgen caridad cobre cuba">
-      <span class="card-badge">Devoci&oacute;n Mariana</span>
-      <h2>Virgen de la Caridad del Cobre</h2>
-      <p>Patrona de Cuba, venerada desde el siglo XVII como s&iacute;mbolo de fe, esperanza y amor.</p>
-      <div class="divider"></div>
-      <div class="docs">
-        <a class="doc-link" href="documentos/virgen-caridad-cobre/oracion.pdf" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-          Oraci&oacute;n
-        </a>
-        <a class="doc-link" href="documentos/virgen-caridad-cobre/rosario.pdf" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-          Rosario
-        </a>
-        <a class="doc-link" href="documentos/virgen-caridad-cobre/hora-santa.pdf" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-          Hora Santa
-        </a>
+      <div class="card" data-name="virgen cristianos perseguidos">
+        <span class="card-badge">Devoci&oacute;n Mariana</span>
+        <h2>Virgen de los Cristianos Perseguidos</h2>
+        <p>Intercesora por los hermanos que sufren persecuci&oacute;n a causa de la fe en Cristo.</p>
+        <div class="divider"></div>
+        <div class="docs">
+          <a class="doc-link" href="documentos/virgen-cristianos-perseguidos/oracion.pdf" target="_blank"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>Oraci&oacute;n</a>
+          <a class="doc-link" href="documentos/virgen-cristianos-perseguidos/rosario.pdf" target="_blank"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>Rosario</a>
+          <a class="doc-link" href="documentos/virgen-cristianos-perseguidos/hora-santa.pdf" target="_blank"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>Hora Santa</a>
+        </div>
       </div>
+
+      <div class="card" data-name="santos martires mexicanos caballeros de colon cristeros">
+        <span class="card-badge">M&aacute;rtires</span>
+        <h2>Santos M&aacute;rtires Mexicanos Caballeros de Col&oacute;n</h2>
+        <p>Caballeros que ofrendaron su vida durante la persecuci&oacute;n religiosa en M&eacute;xico. Entre ellos el
+          Beato Manuel Morales y compa&ntilde;eros m&aacute;rtires.</p>
+        <div class="divider"></div>
+        <div class="docs">
+          <a class="doc-link" href="documentos/martires-mexicanos/oracion.pdf" target="_blank"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>Oraci&oacute;n</a>
+          <a class="doc-link" href="documentos/martires-mexicanos/novena.pdf" target="_blank"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>Novena</a>
+          <a class="doc-link" href="documentos/martires-mexicanos/hora-santa.pdf" target="_blank"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>Hora Santa</a>
+        </div>
+      </div>
+
+      <div class="card" data-name="virgen caridad cobre cuba">
+        <span class="card-badge">Devoci&oacute;n Mariana</span>
+        <h2>Virgen de la Caridad del Cobre</h2>
+        <p>Patrona de Cuba, venerada desde el siglo XVII como s&iacute;mbolo de fe, esperanza y amor.</p>
+        <div class="divider"></div>
+        <div class="docs">
+          <a class="doc-link" href="documentos/virgen-caridad-cobre/oracion.pdf" target="_blank"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>Oraci&oacute;n</a>
+          <a class="doc-link" href="documentos/virgen-caridad-cobre/rosario.pdf" target="_blank"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>Rosario</a>
+          <a class="doc-link" href="documentos/virgen-caridad-cobre/hora-santa.pdf" target="_blank"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M7 21h10a2 2 0 002-2V9l-5-5H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>Hora Santa</a>
+        </div>
+      </div>
+
     </div>
+  </section>
 
-  </div><!-- /grid -->
-</main>
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <p>Caballeros de Col&oacute;n &mdash; Jurisdicci&oacute;n M&eacute;xico Sur &mdash; Uso devocional interno</p>
+    <span class="vivat">Vivat Jesus</span>
+  </footer>
 
-<footer>
-  <p>Caballeros de Col&oacute;n &mdash; Jurisdicci&oacute;n M&eacute;xico Sur &mdash; Uso devocional interno</p>
-  <span class="vivat">Vivat Jesus</span>
-</footer>
+  <script>
+    // ── MODAL ──
+    function abrirModal(src, cap) {
+      var m = document.getElementById('modal');
+      document.getElementById('modal-img').src = src;
+      document.getElementById('modal-cap').innerHTML = cap;
+      m.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function cerrarModal(e) {
+      if (e && e.target !== document.getElementById('modal') && !e.target.closest('.modal-close')) return;
+      document.getElementById('modal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') cerrarModal({ target: document.getElementById('modal') });
+    });
+    // Teclado en tarjetas de calendario
+    document.querySelectorAll('.cal-card').forEach(function (c) {
+      c.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); c.click(); }
+      });
+    });
 
-<script>
-function norm(s){return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"")}
-function filtrar(q){
-  var t=norm(q);
-  var cards=document.querySelectorAll(".card");
-  var visible=0;
-  cards.forEach(function(c){
-    var match=norm(c.dataset.name).includes(t)||norm(c.querySelector("h2").textContent).includes(t);
-    c.style.display=match?"":"none";
-    if(match)visible++;
-  });
-  var label=document.querySelector(".topbar-left");
-  label.innerHTML="<strong>"+visible+"</strong> imagen"+(visible!==1?"es":"")+" encontrada"+(visible!==1?"s":"");
-}
-</script>
+    // ── BUSCADOR ──
+    function norm(s) { return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); }
+    function filtrar(q) {
+      var t = norm(q);
+      var cards = document.querySelectorAll(".card");
+      var visible = 0;
+      cards.forEach(function (c) {
+        var match = norm(c.dataset.name).includes(t) || norm(c.querySelector("h2").textContent).includes(t);
+        c.style.display = match ? "" : "none";
+        if (match) visible++;
+      });
+      document.querySelector(".topbar-left").innerHTML =
+        "<strong>" + visible + "</strong> imagen" + (visible !== 1 ? "es" : "") + " encontrada" + (visible !== 1 ? "s" : "");
+    }
+  </script>
 </body>
+
 </html>
